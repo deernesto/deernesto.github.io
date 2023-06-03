@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
 
 
 form.addEventListener('submit', (e) => {
-    e.preventDefault()
+    /*e.preventDefault()*/
     validacampos()
 }) 
 
@@ -83,6 +83,9 @@ enviar.addEventListener('mouseup', () => {
     console.log('enviar')
    
 })
+
+
+
 
 const nav = document.getElementById("nav");
 const abrir = document.getElementById("abrir");
