@@ -1,0 +1,622 @@
+*{
+    box-sizing: border-box;
+}
+.cabecera{
+    display: flex;  
+    width:100%;
+    position:absolute;
+    justify-content:flex-end;
+    z-index: 100;
+}
+
+
+
+.nav-list{
+    position:relative;
+    list-style: none;
+    display:flex;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+
+
+.nav-list li a{
+    position: relative;
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size: 1.3rem;  
+    text-shadow: 2px 2px #0900ff ;
+}
+
+a::after{
+    content: "";
+    position: absolute;
+    background-color: #00a2ff;
+    height: 3px;
+    width:0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
+
+}
+
+a:hover::after{
+    width: 100%;
+}
+
+
+
+.abrir-menu{
+    display: none;
+    margin:10px ;
+
+}
+
+
+.cerrar-menu{
+    display: none;
+    padding-left:10px ;
+}
+
+@media screen and (max-width: 850px) {
+   .abrir-menu{
+        display:block;
+        position: fixed;
+        margin: 10px;
+    }
+
+    .cerrar-menu{
+        display: block;
+
+    }
+
+
+    .nav{
+        opacity: 0;
+        visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        position:fixed;
+        gap: 1rem;
+        top: 0;
+        right: 0;
+        bottom:0;
+        background-color: #000117;
+        padding: 2rem;
+        z-index: 200;
+        box-shadow:  0 0 0 100vmax rgb(0, 0, 0,.5); 
+    
+    }
+
+
+    .nav.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list{
+        flex-direction: column;
+        align-items: end;
+    }
+
+}
+
+
+
+
+.material-symbols-outlined {
+    color: white;
+    background-color:transparent;
+    border: none;
+ 
+    
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+  
+}
+
+
+
+ .fondo{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    width: 100%;
+    height:670px ;
+    background-image: linear-gradient( 45deg,black,black,#06008c,#7000a5,#c200b6,#e600ac);
+    background-size: 400% 400%;
+    animation: cambiar 5s linear infinite;
+   }
+@keyframes cambiar{
+    0%{background-position: 0% 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}   
+}
+
+
+.titulo{
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size:1.7em; 
+    text-align:left;
+    color:white;
+    font-family: 'Syncopate', sans-serif;
+    text-shadow: 1px 1px 10px #66d7d1;
+ }
+
+ .titulo::before{
+    content: "";
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width:90%;
+    height: 2%;
+    background-image: linear-gradient( 45deg,#02004b,#02004b,#06008c,#7000a5,#c200b6,#e600ac);
+    background-size: 400% 400%;
+    animation: cambiar 5s linear infinite;
+    
+
+ }
+
+
+.fondo2{
+    position: relative;
+    width:auto;
+    background-color: black;
+}
+
+
+.sobremi{
+    position:absolute;
+    margin:1.8rem;
+    top:0;
+    bottom: 0;
+    left:0;
+    right: 0;
+    border-top: 2px solid #66d7d1;
+    border-bottom: 2px solid #66d7d1;
+    border-radius: 20px 20px ;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    padding: 3.5rem;
+    font-family: 'Cabin', sans-serif;
+    text-shadow: 3px 3px 30px black;
+    opacity:0%;
+    transition:all 3s;
+}
+
+
+
+.sobremi2{
+    opacity: 100%;
+}
+   
+
+ .fondo2img{
+    width:100%;
+    height: 650px;
+    object-fit: cover;
+   
+ }
+
+
+ .fondo2::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+ }
+
+
+ .fondo2:hover::before{
+    transition: all 1s;
+ }
+
+
+
+.portafolio{
+    background-color:black;
+
+}
+
+.titulo2{
+    position: relative;
+    width: 100%;
+    height: 250px;   
+    color: white;
+}
+
+.titulo2 h2{
+    position: absolute;
+    top: 20px;
+    left:0;
+    right:0;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-family: 'SYNCOPATE', sans-serif;
+    text-align: center;
+    text-shadow: -2px -2px 4px#66d7d1 ;
+}
+
+.titulo2 p{
+    position: absolute;
+    top: 150px;
+    left:0;
+    right:0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+}
+ .seleccion{
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-evenly; 
+    align-items:flex-end;    
+    padding: 0px 20px;
+   
+}
+.paginas-web img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    border-radius:10px ;
+
+}
+
+ 
+
+ .paginas-web{
+
+    width: 100%;
+    height: 20rem;
+    margin-left: -10px;
+    margin-right: -10px;
+    border: 8px solid black;
+    border-radius: 20px ;
+    background-color:white;
+ }
+
+
+.paginas-web:hover{
+    transform:translateY(-50px);
+    transition: 1s;
+    box-shadow: 5px 5px 20px aqua, -5px -5px 20px aqua;
+}
+
+
+
+@media screen and (max-width: 850px) {
+    .seleccion{
+        display: flex;
+        width: 100%;
+        height: 430px;
+       
+    }
+
+    .seleccion div{
+        width: 0px;
+        flex-grow: 1;
+        object-fit: cover;
+        opacity: .8;
+        transition: .5s ease;
+        
+    }
+
+    .seleccion div:hover{
+        cursor: crosshair;
+        width: 200px;
+        opacity: 1;
+        filter: contrast(120%);
+    }
+
+
+     }
+
+
+
+
+
+
+
+
+.cajalenguajes{
+    width: 100%;
+    height: 650px;
+    padding-top:1px;
+    background-color:rgb(0, 0, 0);
+}
+
+
+.titulo3{
+    top:-100px;
+    left:0;
+    right:0;
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+
+.titulo3 h2{
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2.3rem;
+    text-decoration: underline;
+    margin-top:70px;
+    text-shadow: -2px -2px 4px#66d7d1 ;
+    
+}
+
+.titulo3 p{
+    font-family: 'Cabin', sans-serif;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+   
+
+
+
+
+
+.efectocaja{
+    position: relative;
+    width: 70%;
+    height: 210px;
+    margin: 0 auto;
+    margin-top: 80px;
+    border-radius:50px ;
+    background-image: linear-gradient( 45deg,#c501e2,#9a27f7,#6664ff,#2b97fa,#01c4e7,#c501e2,#9a27f7,#6664ff,#2b97fa,#01c4e7,#2ef8a0,#e7c500,#f82d97,#e830ce,#c2ff05,#1eff05,#ff0534,#ae3dff);
+    background-size: 200% 200%;
+    animation: modificar 2s linear infinite;
+}
+
+@keyframes modificar{
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0% 50%;}
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+.lenguajes{
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:97%;
+    height:200px;
+    margin-right:1%;
+    margin-left: 1.4%;
+    top: 5px;
+    border:2px solid black ;
+    border-radius: 50px;
+    background-color: black;
+}
+
+.lenguajes i{
+   display: inline-block;
+  font-size: 6.3rem;
+}
+
+
+
+.cajaformulario{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(11, 23, 33);
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+
+    
+    border-top: 5px solid black;
+}
+.formulario{
+    padding: 30px;
+    width: 400px;
+    max-width: 300%;
+    height: 30em;
+    margin:20px;
+    border-top: 5px solid #c501e2;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black,2px 2px 30px #00a2ff,-1px -1px 1px black, -2px -2px 20px #00a2ff;
+    background-image:linear-gradient(90deg,#ae3dff,#ff3b93);
+    text-decoration: none;
+}
+
+.formulario h2{
+    margin:0 ;
+    text-align: center;
+    color: white;
+    text-shadow:1px 1px 1px #ff3b93;
+
+
+}
+
+.form-control{
+    margin:10px;
+}
+
+
+
+.form-control input{
+    width: 100%;
+    border: none;
+    outline: none;
+    background:none;
+    border-bottom: 1px solid white;
+}
+
+
+.form-control label{
+    text-transform:uppercase;
+    display: block;
+    color: white;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.form-control textarea{
+    width: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    background:none;
+    border-bottom: 1px solid white;
+}
+
+
+.form-control input:focus + label {
+    text-transform:uppercase;
+    font-weight: bold;
+    color:white;
+    text-shadow:2px 2px 5px #903495;
+}
+
+.enviar{
+    display:block;
+    margin:0 auto;
+    font-size:1.3rem;
+    outline: none;
+    border: 1px solid #99feff;
+    border-radius: 5px;
+    color: white;
+    background-color: #b983ff;
+
+}
+
+
+
+
+
+
+.form-control.falla input {
+
+    border-bottom: 2px solid red;
+}
+
+.form-control.falla label {
+    display: inline-block;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.form-control.falla textarea {
+    border-bottom: 2px solid red;
+}
+
+
+.form-control.falla P {
+    margin: 0;
+    margin-top: 3px;
+    color: red;
+}
+.form-control.ok input {
+    border-bottom: 2px solid rgb(0, 183, 255);
+}
+
+.form-control.ok textarea {
+    border-bottom: 2px solid rgb(0, 183, 255);
+}
+.form-control.ok P {
+   visibility: hidden;
+   margin: 0;
+}
+
+#mensaje{
+    resize:none
+}
+.tamaño{
+
+    display:block;
+    margin:0 auto;
+    font-size:1.5rem;
+    outline: none;
+    border: 1px solid #99feff;
+    border-radius: 5px;
+    color: white;
+    background-color:#b983ff;
+    box-shadow: 2px 2px 10px  #62c2fa, -2px -2px 10px  #62c2fa;
+
+}
+
+
+
+
+
+.piedepagina{
+    width: 100%;
+    height: 100px;
+    padding-top: 1px;
+    background: black;
+}
+
+.piedepagina h2{
+    text-align: center;
+    color: white;
+    font-family:'Syncopate', sans-serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+
+
+.iconos {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+ 
+    width:100%;
+    height: 110px;
+    padding:2rem;
+    background-color:black;
+}
+
+
+.iconos i {
+    display:block;
+    font-size: 3rem;
+    line-height: .05em;
+
+    margin: 3rem;
+}
+
+
+.piedepagina h3{
+    height: 4rem;
+    background-color:black;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin-top: 0;
+    text-transform: uppercase;
+}
