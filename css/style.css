@@ -30,7 +30,7 @@
     text-shadow: 2px 2px #0900ff ;
 }
 
-a::after{
+.inicio::after{
     content: "";
     position: absolute;
     background-color: #00a2ff;
@@ -128,7 +128,7 @@ a:hover::after{
     align-items: center;
     justify-content:flex-start;
     width: 100%;
-    height:670px ;
+    height:100vh;
     background-image: linear-gradient( 45deg,black,black,#06008c,#7000a5,#c200b6,#e600ac);
     background-size: 400% 400%;
     animation: cambiar 5s linear infinite;
@@ -171,7 +171,11 @@ a:hover::after{
 .fondo2{
     position: relative;
     width:auto;
-    background-color: black;
+    height: 100vh;
+    background-color:black;
+    mix-blend-mode: multiply;
+   
+
 }
 
 
@@ -192,7 +196,10 @@ a:hover::after{
     font-family: 'Cabin', sans-serif;
     text-shadow: 3px 3px 30px black;
     opacity:0%;
+    filter:brightness(100%);
+    filter:contrast(100%);
     transition:all 3s;
+    
 }
 
 
@@ -204,8 +211,11 @@ a:hover::after{
 
  .fondo2img{
     width:100%;
-    height: 650px;
+    height: 100vh;
     object-fit: cover;
+    filter:brightness(70%);
+    
+
    
  }
 
@@ -605,8 +615,12 @@ a:hover::after{
     display:block;
     font-size: 3rem;
     line-height: .05em;
-
+    cursor: pointer;
     margin: 3rem;
+}
+
+.iconos a{
+    text-decoration: none;
 }
 
 
