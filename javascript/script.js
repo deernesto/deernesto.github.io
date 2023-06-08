@@ -3,22 +3,28 @@ window.addEventListener('load', () => {
   const name = document.getElementById("name")
   const email = document.getElementById("email")
   const mensaje = document.getElementById("mensaje")
+  const enviar = document.getElementById('enviar')
 
 
 form.addEventListener('submit', (e) => {
-    /*e.preventDefault()*/
-    validacampos()
+    e.preventDefault()
+    if(validacampos()){
+        form.submit();
+    }
 }) 
 
 const validacampos = ()=> {
+    let camposok = true;
     const namevalor = name.value.trim()
     const emailvalor = email.value.trim()
     const mensajevalor = mensaje.value.trim()
 
 
     if(!namevalor){
+        
        console.log('campo vacio')
-       validafalla(name,'campo vacio')
+       validafalla(name,'box empty')
+       
 
        }else{
         
@@ -27,7 +33,9 @@ const validacampos = ()=> {
 
         
     if(!mensajevalor){
-        validafalla(mensaje, 'campo vacio' )
+        camposok = false;
+        validafalla(mensaje, 'box empty' )
+       
     }else{
 
         validaok(mensaje);
@@ -36,13 +44,19 @@ const validacampos = ()=> {
 
 
     if(!emailvalor){
-        validafalla(email,'campo vacio')
+        camposok = false;
+        validafalla(email,'box empty')
+        
     }else if(!emailvalor.match(validaemail)) {
-        validafalla(email, 'el e-mail no es valido')
+        camposok = false;
+        validafalla(email, 'e-mail invalid')
+       
     }else{
 
         validaok(email);
     }
+
+    return camposok;
 
   };
 
